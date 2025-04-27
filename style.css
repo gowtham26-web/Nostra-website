@@ -555,7 +555,7 @@ a {
     }
     
     .service {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; 
     }
     
     .promo-banner {
