@@ -1,0 +1,368 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-family: "DM Sans", sans-serif;
+}
+    
+.offer-bar{
+    background-color: #1D232C;
+    color: #E2E1E1;
+    text-align: center;
+    padding: 15px;
+    font-family: "DM Sans", sans-serif;
+    font-size: x-large;
+
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 10px;
+    font-family:"DM Sans", sans-serif ;
+    align-items: center;
+
+}
+.navbar-items{
+    display: flex;
+    justify-content: end;
+    gap: 80px;
+    text-decoration: underline;
+
+
+}
+.navbar h1{
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.side-navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #1D232C;
+    color: #E2E1E1;
+    margin-left: -60%;
+    transition-duration: 1s;
+    z-index: 10;
+    padding: 20px;
+  
+}
+
+.side-navbar-link{
+    margin-bottom: 30px;
+}
+
+.side-navbar-links a{
+    text-decoration: none;
+    color: #E2E1E1;
+}
+
+.side-navbar-links a:hover{
+    text-decoration: underline;
+    color: #E2E1E1;
+}
+
+.side-navbar-search {
+    border: solid #E2E1E1 1px;
+    border-radius: 10px;
+    padding: 10px;
+    display: inline-block;
+}
+
+.side-navbar-search input {
+    border: none;
+    background: transparent;
+}
+
+.slider{
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    position: relative;
+    
+    border-radius: 5px;
+
+}
+
+.slider-image-container{
+    display: flex;
+    transition: 1s;
+    height: 450px;
+}
+
+.slider-image{
+    width: 100vw;
+}
+
+.slider-left-button{
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    z-index: 1;
+}
+
+.slider-left-button i{
+    font-size: 10vw;
+    
+}
+.slider-right-button{
+    position: absolute;
+    top: 35%;
+    right: 5%;
+}
+.slider-right-button i{
+    font-size: 10vw;
+}
+.slider-content{
+    position: absolute;
+    color: white;
+    text-align: center;
+     width: 100%;
+     top: 20%;
+}
+.slider-content h1{
+    font-size: 5vw;
+}
+.slider-content button{
+   padding-left: 20px;
+   padding-right: 20px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   margin-top: 10px;
+   color: #1D232C;
+}
+.brands{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    gap: 100px;
+}
+.brand-items{
+    width: 80px;
+    height: 80px;
+}
+.brand-items p{
+    text-align: center;
+    font-family:"DM Sans", sans-serif ;
+    font-size: xx-large;
+}
+.textarea{
+    padding: 5px;
+    margin-top: 60px;
+   
+    font-family:"DM Sans", sans-serif ;
+    font-size: xx-large;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 390px;
+    
+}
+.textarea-part1{
+   font-weight: 700;
+}
+.textarea-part2{
+    font-size: x-large;
+}
+.service{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5px;
+    
+}
+.service-items{
+    background-color: #F2F4F7;
+    border: none;
+    border-radius: 5px;
+    font-family:"DM Sans", sans-serif ;
+}
+.service-items h4{
+    font-weight: 700;
+}
+.new-arrival{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.new-arrival-container{
+    position: relative;
+}
+.overlay{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    position: absolute;
+    background-color: black;
+    top: 0;
+    opacity: 0.4;
+    z-index: 2;
+ }
+ .new-arrival button{
+    
+    margin-top: 10px;
+    font-size: 20px;
+    background-color: #F0F0F0;
+    color: #1D232C;
+    border-radius: 10px;
+    position: absolute;
+    border: none;
+    top: 42%;
+    left: 28%;
+    z-index: 2;
+    padding: 10px;
+ }
+ .most-wanted{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2vw;
+    overflow-x: scroll;
+    gap: 20px;
+   
+    
+}
+
+.most-wanted-container{
+   position: relative; 
+   
+}
+
+.most-wanted img{
+    border-radius: 2%;
+    
+     
+ }
+
+ .sale-overlay{
+    position: absolute;
+    top:3px;
+    left: 3px;
+    font-size: 2vw;
+    background-color: red;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10%;
+ }
+
+ .most-wanted::-webkit-scrollbar {
+    appearance: none;
+    
+  }
+   
+.like-button{
+    position: absolute;
+    width: 15%;
+    bottom: 12%;
+    right: 5%;
+}
+
+.banner2{
+    background-color: #1D232C;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 30px;
+}
+.banner-image{
+  
+}
+.banner-content{
+    color: white;
+    font-size: xx-large;
+    margin-right: 10px;
+}
+.banner-btn{
+    background-color: #F0F0F0;
+    color: black;
+    border: solid black 1px;
+    padding: 10px;
+    border-radius: 5px;
+    width: fit-content;
+    font-size: large;
+    margin-top: 30px;
+}
+.text-center{
+    font-family:"DM Sans", sans-serif ;
+    margin-top: 20px;
+
+}
+.text-center input{
+    border: solid black 3px;
+}
+.text-center button{
+    border-radius: 10px;
+    width: 10%;
+    font-size: x-large;
+    color: #E2E1E1;
+
+}
+.footer{
+    background-color: #1D232C;
+    color: #E2E1E1;
+    font-family:"DM Sans", sans-serif ;
+    font-size: xx-large;
+}
+
+
+/* Collections */
+
+.divide-section {
+    display: flex;
+}
+
+.filter-section {
+    flex-basis: 25%;
+    position: relative;
+    font-size: 2vw;
+    padding: 20px;
+}
+
+.product-section {
+    flex-basis: 75%;
+    position: relative;
+}
+
+.vertical-line {
+    border: none;
+    border-left: 3px solid #1D232C;
+    height: 100%;
+    margin: 0 20px;
+    position: absolute;
+    top: 0px;
+    right: 0px
+}
+
+.filter-section-price,
+.filter-section-arrivals,
+.filter-section-occasion,
+.filter-section-colors {
+    margin-top: 3vw;
+    margin-bottom: 10px;
+}
+
+.product-section {
+    padding: 10px;
+}
+
+.product {
+    margin-top: 2vw;
+    font-size: 1.5vw;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    font-family:"DM Sans", sans-serif; 
+
+}
+
+.product img {
+    width: 20vw;
+}
+.product h1{
+    font-weight: bold;
+}
