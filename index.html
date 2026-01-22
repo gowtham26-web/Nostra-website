@@ -4,278 +4,773 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nostra</title>
+    <title>Nostra - Premium Fashion</title>
+    <meta name="description" content="Discover the latest fashion trends at Nostra. Shop premium clothing with free shipping across India.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
     <!-- style.css link -->
     <link rel="stylesheet" href="style.css">
 
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-        rel="stylesheet">
-   <!-- font awesome cnd -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-  integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <!-- tailwind cdn -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-
+    
+    <!-- AOS animation library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body>
-    <!-- offer -->
-     <div id="offer-bar-hide">
-        <div class="offer-bar">
-            <p>Sign up and <b>GET 20% OFF </b>for your first order
-                <i id="offer-close" style="margin-left: 10%; cursor: pointer;" class="fa-solid fa-xmark"></i>
+<body class="font-dm-sans">
+    <!-- offer bar -->
+    <div id="offer-bar-hide" class="bg-black text-white">
+        <div class="offer-bar container mx-auto py-2 px-4 text-center text-sm md:text-base">
+            <p>Sign up and <strong class="font-bold">GET 20% OFF</strong> for your first order. 
+                <span class="ml-4 md:ml-8">Use code: <strong>NEW20</strong></span>
+                <i id="offer-close" class="fa-solid fa-xmark ml-4 cursor-pointer hover:text-gray-300 transition-colors"></i>
             </p>
         </div>
-     </div>
+    </div>
     
     <!-- navbar -->
-    <nav class="navbar">
-        <h1>Nostra</h1>
+    <nav class="navbar sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold font-playfair-display">Nostra</a>
 
-        <svg id="menuicon" class="md:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-            stroke-width="1.5" stroke="currentColor" width="26" height="26">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-        <div class="navbar-items hidden md:flex">
-            <a href="index.html">Home</a>
-            <a href="index.html">New arrival</a>
-            <a href="index.html">Most wanted</a>
-            <a href="collection.html">Collection</a>
-            <a href="contact.html">Contact us</a>
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center space-x-4">
+                <a href="#" class="text-lg"><i class="fas fa-search"></i></a>
+                <a href="#" class="text-lg"><i class="fas fa-shopping-bag"></i></a>
+                <button id="menuicon" class="text-gray-700 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="26" height="26">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Desktop menu -->
+            <div class="navbar-items hidden md:flex items-center space-x-8">
+                <a href="index.html" class="hover:text-gray-600 transition-colors">Home</a>
+                <a href="#new-arrival" class="hover:text-gray-600 transition-colors">New Arrivals</a>
+                <a href="#most-wanted" class="hover:text-gray-600 transition-colors">Most Wanted</a>
+                <a href="collection.html" class="hover:text-gray-600 transition-colors">Collections</a>
+                <a href="contact.html" class="hover:text-gray-600 transition-colors">Contact</a>
+                <a href="#" class="text-lg hover:text-gray-600"><i class="fas fa-search"></i></a>
+                <a href="#" class="text-lg hover:text-gray-600"><i class="fas fa-user"></i></a>
+                <a href="#" class="text-lg hover:text-gray-600 relative">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                </a>
+            </div>
         </div>
     </nav>
-<!-- side navbar -->
-    <div class="side-navbar"> 
-        <p style="text-align: right;">
-            <i id="side-navbar-close" class="fa-solid fa-xmark"></i>
-        </p>
-        <div class="side-navbar-links">
 
-            <p class="side-navbar-link"><a href="./index.html">Home</a></p>
-            <p class="side-navbar-link"><a href="#new-arrival">New Arrival</a></p>
-        <p class="side-navbar-link"><a href="#most-wanted">Most Wanted</a></p>
-        <p class="side-navbar-link"><a href="./collections.html">Collections</a></p>
-        <p class="side-navbar-link"><a href="./contactus.html">Contact Us</a></p>
+    <!-- Mobile side navbar -->
+    <div class="side-navbar"> 
+        <div class="flex justify-between items-center p-4">
+            <a href="index.html" class="text-2xl font-bold text-white">Nostra</a>
+            <button id="side-navbar-close" class="text-2xl text-white focus:outline-none">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
         </div>
         
-    </div>
-
-    <div class="container">
-    <!-- slide banner -->
-    <div class="slider">
-        <div class="slider-left-button">
-            <i id="slider-left-activate" class="fa-solid fa-angle-left" style="color: #ffffff;"></i>
-        </div>
-
-        <div class="slider-content">
-            <h1>Level up your style with our</h1>
-            <h4>Summer Collections</h4>
-            <button> Shop Now <i class="fa-solid fa-arrow-right"></i> </button>
-        </div>
-
-        <div class="slider-image-container">
-            <img class="slider-image" src="images/others/slider-one.jpg" width="100%" alt="">
-            <img class="slider-image" src="images/others/slider-two.jpg" alt="">
-            <img class="slider-image" src="images/others/slider-three.jpg" alt="">
-        </div>
-
-        <div class="slider-right-button">
-
-            <i id="slider-right-activate" class="fa-solid fa-angle-right" style="color: #ffffff;"></i>
+        <div class="side-navbar-links p-4 space-y-4">
+            <a href="index.html" class="block py-2 text-white hover:text-gray-300">Home</a>
+            <a href="#new-arrival" class="block py-2 text-white hover:text-gray-300">New Arrivals</a>
+            <a href="#most-wanted" class="block py-2 text-white hover:text-gray-300">Most Wanted</a>
+            <a href="collection.html" class="block py-2 text-white hover:text-gray-300">Collections</a>
+            <a href="contact.html" class="block py-2 text-white hover:text-gray-300">Contact</a>
         </div>
     </div>
-    <!-- Brand section -->
-    <h2 class="text-3xl p-5 font-sans font-bold">Brands</h2>
-    <div class="brands">
-        <div class="brand-items">
-            <img src="images/icons/puma.png" alt="">
-            <p>Puma</p>
+
+    <!-- Hero slider -->
+    <div class="slider relative overflow-hidden h-screen max-h-[800px]">
+        <!-- Slider navigation buttons -->
+        <button id="slider-left-activate" class="slider-button left-4 md:left-8">
+            <i class="fa-solid fa-angle-left"></i>
+        </button>
+        
+        <button id="slider-right-activate" class="slider-button right-4 md:right-8">
+            <i class="fa-solid fa-angle-right"></i>
+        </button>
+        
+        <!-- Slider indicators -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+            <span class="slider-indicator w-3 h-3 rounded-full bg-white border border-gray-300 cursor-pointer"></span>
+            <span class="slider-indicator w-3 h-3 rounded-full bg-white border border-gray-300 cursor-pointer"></span>
+            <span class="slider-indicator w-3 h-3 rounded-full bg-white border border-gray-300 cursor-pointer"></span>
         </div>
-        <div class="brand-items">
-            <img src="images/icons/adidas.png" alt="">
-            <p>Adidas</p>
-        </div>
-        <div class="brand-items">
-            <img src="images/icons/simple.png" alt="">
-            <p>Simple</p>
-        </div>
-        <div class="brand-items">
-            <img src="images/icons/leaves.png" alt="">
-            <p>Leaves</p>
-        </div>
-        <div class="brand-items">
-            <img src="images/icons/behance.png" alt="">
-            <p>Behance</p>
-        </div>
-        <div class="brand-items">
-            <img src="images/icons/twitch.png" alt="">
-            <p>Twitch</p>
-        </div>
-        <div class="brand-items">
-            <img src="images/icons/simple.png" alt="">
-            <p>Simple</p>
-        </div>
-    </div>
-    <!-- text area -->
-    <div class="textarea">
-        <div class="textarea-part1">
-            <h1>We Provide Best
-                <h1>Customer Experiences</h1>
-        </div>
-
-        <div class="textarea-part2">
-            <p>|| We ensure that our customer have the best shopping experience</p>
-        </div>
-
-    </div>
-    <!-- website service -->
-    <div class="service ">
-        <div class="border border-black p-2 m-5 service-items">
-            <i style="font-size: 3vw;margin-bottom: 10px;" class="fa-regular fa-circle-check"></i>
-            <h4>Original products</h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro, consequuntur.</p>
-        </div>
-        <div class="border border-black p-2 m-5 service-items">
-            <i style="font-size: 3vw;margin-bottom: 10px;" class="fa-regular fa-face-smile"></i>
-            <h4>Satisfaction Guarantee</h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro, consequuntur.</p>
-        </div>
-        <div class="border border-black p-2 m-5 service-items">
-            <i style="font-size: 3vw;margin-bottom: 10px;" class="fa-solid fa-broom"></i>
-            <h4>New Arrival Everyday</h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro, consequuntur.</p>
-        </div>
-        <div class="border border-black p-2 m-5 service-items">
-            <i style="font-size: 3vw;margin-bottom: 10px;" class="fa-solid fa-truck-fast"></i>
-            <h4>Fast & Free Shipping</h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro, consequuntur.</p>
-        </div>
-    </div>
-    <!-- New arrivals -->
-
-    <h2 style=" margin-top: 5vw; font-size: x-large; font-weight: 700;padding: 15px;">New Arrivals</h2>
-
-        <div  class="new-arrival" >
-            
-            <div class="new-arrival-container">
-                <img style="width: 20vw;" src="images/product/f1.jpg" alt="">
-                <div class="overlay"></div>
-                <button> Shop Now <i class="fa-solid fa-arrow-right"></i> </button>
-
-            </div>
-
-            <div class="new-arrival-container">
-                <img style="width: 20vw;" src="images/product/f2.jpg" alt="">
-                <div class="overlay"></div>
-                <button> Shop Now <i class="fa-solid fa-arrow-right"></i> </button>
-
-            </div>
-
-            <div class="new-arrival-container">
-                <img style="width: 20vw;" src="images/product/f3.jpg" alt="">
-                <div class="overlay"></div>
-                <button> Shop Now <i class="fa-solid fa-arrow-right"></i> </button>
-
-            </div>
-
-            <div class="new-arrival-container">
-                <img style="width: 20vw;" src="images/product/f4.jpg" alt="">
-                <div class="overlay"></div>
-                <button> Shop Now <i class="fa-solid fa-arrow-right"></i> </button>
-
-            </div>
-        </div>
-        <!-- Most wanted -->
-        <h2 id="most-wanted" style="padding: 10px; margin-top: 5vw; font-size: x-large; font-weight: bold;">Most Wanted</h2>
-
-        <div  class="most-wanted">
-
-            <div class="most-wanted-container">
-                <img style="width: 20vw;" src="images/product/f5.jpg" alt="">
-                <p class="sale-overlay">sale</p>
-                <img class="like-button" src="images/icons/blackheart.png" alt="">
-
-            </div>
-
-            <div class="most-wanted-container">
-                <img style="width: 20vw;" src="images/product/f6.jpg" alt="">
-                
-                <p class="sale-overlay">sale</p>
-                <img class="like-button" src="images/icons/blackheart.png" alt="">
-            </div>
-
-            <div class="most-wanted-container">
-                <img style="width: 20vw;" src="images/product/f7.jpg" alt="">
-                <p class="sale-overlay">sale</p>
-                <img class="like-button" src="images/icons/blackheart.png" alt="">
-                
-
-            </div>
-
-            <div class="most-wanted-container">
-                <img style="width: 20vw;" src="images/product/f8.jpg" alt="">
-                <p class="sale-overlay">sale</p>
-                <img class="like-button" src="images/icons/blackheart.png" alt="">
-            </div>
-        </div>
-
-        <!-- banner 2 -->
-         <div class="banner2">
-            <div class="banner-image">
-                <img src="images/others/offer.jpg" alt="">
-            </div>
-            <div class="banner-content">
-                <h1 class="text-6xl font-bold">Limited Offer</h1>
-                <h2 class="text-3xl font-bold">35% OFF on this for the first 30 Customers</h2>
-                <div class="banner-btn">
-                    <button>shop now <i class="fa-solid fa-arrow-right"></i></button>
+        
+        <!-- Slider items -->
+        <div class="slider-container h-full w-full relative">
+            <!-- Slide 1 -->
+            <div class="slider-item absolute inset-0 flex items-center bg-gray-100" data-aos="fade-in">
+                <div class="container mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-4 font-playfair-display">Summer Collection 2023</h1>
+                        <p class="text-lg md:text-xl mb-6 text-gray-600">Discover our premium selection of summer essentials designed for Indian weather.</p>
+                        <button class="bg-black text-white px-8 py-3 hover:bg-gray-800 transition-colors flex items-center">
+                            Shop Now <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center" data-aos="fade-left">
+                        <img src="images/others/slider-one.jpg" alt="Summer Collection" class="max-h-[500px] object-cover rounded-lg shadow-xl">
+                    </div>
                 </div>
             </div>
-         </div>
+            
+            <!-- Slide 2 -->
+            <div class="slider-item absolute inset-0 flex items-center bg-gray-100">
+                <div class="container mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-4 font-playfair-display">Festive Special</h1>
+                        <p class="text-lg md:text-xl mb-6 text-gray-600">Traditional wear perfect for Diwali, New Year and wedding season.</p>
+                        <button class="bg-black text-white px-8 py-3 hover:bg-gray-800 transition-colors flex items-center">
+                            Explore <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center" data-aos="fade-left">
+                        <img src="images/others/slider-two.jpg" alt="Festive Collection" class="max-h-[500px] object-cover rounded-lg shadow-xl">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="slider-item absolute inset-0 flex items-center bg-gray-100">
+                <div class="container mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-4 font-playfair-display">Limited Edition</h1>
+                        <p class="text-lg md:text-xl mb-6 text-gray-600">Exclusive pieces that won't last long. Get yours before they're gone.</p>
+                        <button class="bg-black text-white px-8 py-3 hover:bg-gray-800 transition-colors flex items-center">
+                            View Collection <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center" data-aos="fade-left">
+                        <img src="images/others/slider-three.jpg" alt="Limited Edition" class="max-h-[500px] object-cover rounded-lg shadow-xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-         <!-- news -->
-         <section class="text-center">
-            <h1 class="text-5xl font-bold mt-5 " >Join our news letter</h1>
-            <p class="text-3xl">Sign up for our email newspaper to get exclusive discounts,updates,and more</p>
-            <input type="text" class="border border-black p-2 m-3 " style="width:85%;" id="">
-            <br>
-            <button class="bg-black text-white p-2 m-1 ">Subscribe<i class="fa-solid fa-arrow-right"></i></button>
-          </section>
+    <!-- Featured Brands -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center font-playfair-display" data-aos="fade-up">Our Featured Brands</h2>
+            <p class="text-gray-600 mb-12 text-center max-w-2xl mx-auto" data-aos="fade-up">We partner with the most respected names in fashion to bring you quality and style.</p>
+            
+            <div class="brands grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
+                <div class="brand-item flex flex-col items-center p-4 hover:bg-white hover:shadow-md rounded-lg transition-all" data-aos="zoom-in">
+                    <img src="images/icons/puma.png" alt="Puma" class="h-12 object-contain mb-3">
+                    <p class="text-sm font-medium">Puma</p>
+                </div>
+                <div class="brand-item flex flex-col items-center p-4 hover:bg-white hover:shadow-md rounded-lg transition-all" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="images/icons/adidas.png" alt="Adidas" class="h-12 object-contain mb-3">
+                    <p class="text-sm font-medium">Adidas</p>
+                </div>
+                <div class="brand-item flex flex-col items-center p-4 hover:bg-white hover:shadow-md rounded-lg transition-all" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="images/icons/simple.png" alt="Simple" class="h-12 object-contain mb-3">
+                    <p class="text-sm font-medium">Simple</p>
+                </div>
+                <div class="brand-item flex flex-col items-center p-4 hover:bg-white hover:shadow-md rounded-lg transition-all" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="images/icons/leaves.png" alt="Leaves" class="h-12 object-contain mb-3">
+                    <p class="text-sm font-medium">Leaves</p>
+                </div>
+                <div class="brand-item flex flex-col items-center p-4 hover:bg-white hover:shadow-md rounded-lg transition-all" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="images/icons/behance.png" alt="Behance" class="h-12 object-contain mb-3">
+                    <p class="text-sm font-medium">Behance</p>
+                </div>
+                <div class="brand-item flex flex-col items-center p-4 hover:bg-white hover:shadow-md rounded-lg transition-all" data-aos="zoom-in" data-aos-delay="500">
+                    <img src="images/icons/twitch.png" alt="Twitch" class="h-12 object-contain mb-3">
+                    <p class="text-sm font-medium">Twitch</p>
+                </div>
+                <div class="brand-item flex flex-col items-center p-4 hover:bg-white hover:shadow-md rounded-lg transition-all" data-aos="zoom-in" data-aos-delay="600">
+                    <img src="images/icons/simple.png" alt="Simple" class="h-12 object-contain mb-3">
+                    <p class="text-sm font-medium">Simple</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- footer -->
-<section class="bg-slate-950 p-10 flex flex-col gap-5 footer ">
-    <h1 class="text-5xl font-bold">Nostra</h1>
-    <p>hurry up to avail our exclusive Collections of dress and make your wardrobe plesant as pleased</p>
-<div style="display: flex; gap: 60px; font-size: xx-large;">
-    <i class="fa-brands fa-instagram"></i>
-    <i class="fa-brands fa-x-twitter"></i>
-    <i class="fa-brands fa-facebook"></i>
-</div>
-    <p>@2023 Nostra.com</p>
-   </section>
+    <!-- Value Proposition -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center mb-16">
+                <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
+                    <h2 class="text-4xl font-bold mb-6 font-playfair-display">We Provide The Best<br>Customer Experience</h2>
+                    <p class="text-xl text-gray-600">At Nostra, we're committed to delivering exceptional service from browsing to delivery.</p>
+                </div>
+                <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
+                    <p class="text-lg mb-6 flex items-start">
+                        <span class="text-2xl mr-4">||</span>
+                        <span>We ensure that our customers have the best shopping experience with personalized service and premium products.</span>
+                    </p>
+                    <button class="border-b border-black pb-1 font-medium hover:text-gray-600 transition-colors">
+                        Learn more about us <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Services -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="service-item p-6 border border-gray-200 rounded-lg hover:shadow-md transition-all" data-aos="fade-up">
+                    <i class="fas fa-award text-4xl mb-4 text-gray-700"></i>
+                    <h3 class="text-xl font-bold mb-2">Original Products</h3>
+                    <p class="text-gray-600">We guarantee 100% authentic products from official brand partners.</p>
+                </div>
+                <div class="service-item p-6 border border-gray-200 rounded-lg hover:shadow-md transition-all" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-smile text-4xl mb-4 text-gray-700"></i>
+                    <h3 class="text-xl font-bold mb-2">Satisfaction Guarantee</h3>
+                    <p class="text-gray-600">30-day hassle-free returns if you're not completely satisfied.</p>
+                </div>
+                <div class="service-item p-6 border border-gray-200 rounded-lg hover:shadow-md transition-all" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-calendar-plus text-4xl mb-4 text-gray-700"></i>
+                    <h3 class="text-xl font-bold mb-2">New Arrivals Daily</h3>
+                    <p class="text-gray-600">Fresh styles added regularly to keep your wardrobe updated.</p>
+                </div>
+                <div class="service-item p-6 border border-gray-200 rounded-lg hover:shadow-md transition-all" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-truck text-4xl mb-4 text-gray-700"></i>
+                    <h3 class="text-xl font-bold mb-2">Fast & Free Shipping</h3>
+                    <p class="text-gray-600">Free delivery on all orders over ₹999 with express options available.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- New Arrivals -->
+    <section id="new-arrival" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold font-playfair-display" data-aos="fade-right">New Arrivals</h2>
+                <a href="#" class="text-black hover:text-gray-600 transition-colors flex items-center" data-aos="fade-left">
+                    View all <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all" data-aos="fade-up">
+                    <div class="product-image relative overflow-hidden">
+                        <img src="images/product/f1.jpg" alt="Summer Dress" class="w-full h-80 object-cover">
+                        <div class="product-overlay absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-opacity-20 transition-all">
+                            <button class="bg-white text-black px-6 py-2 rounded-full font-medium transform translate-y-4 hover:translate-y-0 transition-transform">
+                                Quick View
+                            </button>
+                        </div>
+                        <span class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded-full">NEW</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium mb-1">Floral Summer Dress</h3>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">₹1,599</span>
+                            <div class="flex space-x-1 text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-image relative overflow-hidden">
+                        <img src="images/product/f2.jpg" alt="Denim Jacket" class="w-full h-80 object-cover">
+                        <div class="product-overlay absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-opacity-20 transition-all">
+                            <button class="bg-white text-black px-6 py-2 rounded-full font-medium transform translate-y-4 hover:translate-y-0 transition-transform">
+                                Quick View
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium mb-1">Classic Denim Jacket</h3>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">₹2,299</span>
+                            <div class="flex space-x-1 text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-image relative overflow-hidden">
+                        <img src="images/product/f3.jpg" alt="Linen Shirt" class="w-full h-80 object-cover">
+                        <div class="product-overlay absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-opacity-20 transition-all">
+                            <button class="bg-white text-black px-6 py-2 rounded-full font-medium transform translate-y-4 hover:translate-y-0 transition-transform">
+                                Quick View
+                            </button>
+                        </div>
+                        <span class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded-full">NEW</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium mb-1">Premium Linen Shirt</h3>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">₹1,299</span>
+                            <div class="flex space-x-1 text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-image relative overflow-hidden">
+                        <img src="images/product/f4.jpg" alt="Casual Pants" class="w-full h-80 object-cover">
+                        <div class="product-overlay absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-opacity-20 transition-all">
+                            <button class="bg-white text-black px-6 py-2 rounded-full font-medium transform translate-y-4 hover:translate-y-0 transition-transform">
+                                Quick View
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium mb-1">Tailored Casual Pants</h3>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">₹1,799</span>
+                            <div class="flex space-x-1 text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Most Wanted -->
+    <section id="most-wanted" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold font-playfair-display" data-aos="fade-right">Most Wanted</h2>
+                <a href="#" class="text-black hover:text-gray-600 transition-colors flex items-center" data-aos="fade-left">
+                    View all <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all" data-aos="fade-up">
+                    <div class="product-image relative overflow-hidden">
+                        <img src="images/product/f5.jpg" alt="Leather Bag" class="w-full h-80 object-cover">
+                        <div class="product-overlay absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-opacity-20 transition-all">
+                            <button class="bg-white text-black px-6 py-2 rounded-full font-medium transform translate-y-4 hover:translate-y-0 transition-transform">
+                                Quick View
+                            </button>
+                        </div>
+                        <span class="absolute top-4 left-4 bg-black text-white text-xs px-2 py-1 rounded-full">SALE</span>
+                        <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors">
+                            <i class="far fa-heart text-xl"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium mb-1">Genuine Leather Bag</h3>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-gray-600 line-through">₹3,499</span>
+                            <span class="font-bold text-black">₹2,699</span>
+                            <span class="text-xs bg-red-100 text-red-600 px-1 rounded">-23%</span>
+                        </div>
+                        <div class="flex mt-1 space-x-1 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-image relative overflow-hidden">
+                        <img src="images/product/f6.jpg" alt="Sneakers" class="w-full h-80 object-cover">
+                        <div class="product-overlay absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-opacity-20 transition-all">
+                            <button class="bg-white text-black px-6 py-2 rounded-full font-medium transform translate-y-4 hover:translate-y-0 transition-transform">
+                                Quick View
+                            </button>
+                        </div>
+                        <span class="absolute top-4 left-4 bg-black text-white text-xs px-2 py-1 rounded-full">SALE</span>
+                        <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors">
+                            <i class="far fa-heart text-xl"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium mb-1">Premium Sneakers</h3>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-gray-600 line-through">₹2,999</span>
+                            <span class="font-bold text-black">₹2,299</span>
+                            <span class="text-xs bg-red-100 text-red-600 px-1 rounded">-23%</span>
+                        </div>
+                        <div class="flex mt-1 space-x-1 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-image relative overflow-hidden">
+                        <img src="images/product/f7.jpg" alt="Wool Coat" class="w-full h-80 object-cover">
+                        <div class="product-overlay absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-opacity-20 transition-all">
+                            <button class="bg-white text-black px-6 py-2 rounded-full font-medium transform translate-y-4 hover:translate-y-0 transition-transform">
+                                Quick View
+                            </button>
+                        </div>
+                        <span class="absolute top-4 left-4 bg-black text-white text-xs px-2 py-1 rounded-full">SALE</span>
+                        <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors">
+                            <i class="far fa-heart text-xl"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium mb-1">Winter Wool Coat</h3>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-gray-600 line-through">₹4,999</span>
+                            <span class="font-bold text-black">₹3,799</span>
+                            <span class="text-xs bg-red-100 text-red-600 px-1 rounded">-24%</span>
+                        </div>
+                        <div class="flex mt-1 space-x-1 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-image relative overflow-hidden">
+                        <img src="images/product/f8.jpg" alt="Silk Scarf" class="w-full h-80 object-cover">
+                        <div class="product-overlay absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-opacity-20 transition-all">
+                            <button class="bg-white text-black px-6 py-2 rounded-full font-medium transform translate-y-4 hover:translate-y-0 transition-transform">
+                                Quick View
+                            </button>
+                        </div>
+                        <span class="absolute top-4 left-4 bg-black text-white text-xs px-2 py-1 rounded-full">SALE</span>
+                        <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors">
+                            <i class="far fa-heart text-xl"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium mb-1">Luxury Silk Scarf</h3>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-gray-600 line-through">₹1,299</span>
+                            <span class="font-bold text-black">₹899</span>
+                            <span class="text-xs bg-red-100 text-red-600 px-1 rounded">-31%</span>
+                        </div>
+                        <div class="flex mt-1 space-x-1 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Promo Banner -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="promo-banner bg-black text-white rounded-xl overflow-hidden flex flex-col lg:flex-row" data-aos="fade-up">
+                <div class="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
+                    <span class="text-sm font-medium text-gray-300 mb-2">LIMITED TIME OFFER</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">35% OFF Only For The First 30 Customers!</h2>
+                    <p class="text-gray-300 mb-6">Use code <strong class="text-white">FIRST35</strong> at checkout. Hurry, this exclusive offer won't last long!</p>
+                    <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                        <button class="bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-200 transition-colors">
+                            Shop Now <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </button>
+                        <button class="border border-white text-white px-6 py-3 rounded-full font-medium hover:bg-white hover:text-black transition-colors">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <img src="images/others/offer.jpg" alt="Special Offer" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center font-playfair-display" data-aos="fade-up">What Our Customers Say</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card p-6 border border-gray-200 rounded-lg" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1 text-yellow-400 mr-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-sm text-gray-500">2 days ago</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">"The quality of the dress I received exceeded my expectations. It fits perfectly and the fabric is so comfortable. Will definitely shop here again!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Priya M." class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium">Priya M.</h4>
+                            <p class="text-sm text-gray-500">Mumbai, Maharashtra</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card p-6 border border-gray-200 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1 text-yellow-400 mr-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-sm text-gray-500">1 week ago</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Fast shipping and excellent customer service. The jacket I ordered is even better in person. Nostra is now my go-to for fashion essentials."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Rahul S." class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium">Rahul S.</h4>
+                            <p class="text-sm text-gray-500">Bangalore, Karnataka</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card p-6 border border-gray-200 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1 text-yellow-400 mr-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-sm text-gray-500">3 weeks ago</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">"I'm so impressed with the quality and style of everything I've purchased from Nostra. Their collection is unique and the prices are reasonable."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Ananya P." class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium">Ananya P.</h4>
+                            <p class="text-sm text-gray-500">Delhi, NCR</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Newsletter -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 font-playfair-display" data-aos="fade-up">Join Our Newsletter</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8" data-aos="fade-up">Sign up for our email newsletter to get exclusive discounts, updates, and more.</p>
+            
+            <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-3" data-aos="fade-up">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent" required>
+                <button type="submit" class="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors flex items-center justify-center">
+                    Subscribe <i class="fa-solid fa-arrow-right ml-2"></i>
+                </button>
+            </form>
+            
+            <p class="text-sm text-gray-500 mt-4" data-aos="fade-up">We respect your privacy. Unsubscribe at any time.</p>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer class="bg-black text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Column 1 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 font-playfair-display">Nostra</h3>
+                    <p class="text-gray-400 mb-4">Premium fashion for the modern Indian. Quality, style, and comfort in every piece.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Column 2 -->
+                <div>
+                    <h4 class="font-bold mb-4">Shop</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">New Arrivals</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Best Sellers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Men's Collection</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Women's Collection</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Accessories</a></li>
+                    </ul>
+                </div> 
+                
+                <!-- Column 3 -->
+                <div>
+                    <h4 class="font-bold mb-4">Help</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Customer Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Track Order</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Returns & Exchanges</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Shipping Information</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 -->
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>No:123, Main Road, Puducherry - 605110</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3"></i>
+                            <span>+91 12345 67890</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <span>hello@nostra.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 Nostra. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-black text-white w-12 h-12 rounded-full flex items-center justify-center opacity-0 invisible transition-all">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animation library
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
 
+        // Mobile menu toggle
+        document.getElementById('menuicon').addEventListener('click', function() {
+            document.querySelector('.side-navbar').classList.add('active');
+        });
 
+        document.getElementById('side-navbar-close').addEventListener('click', function() {
+            document.querySelector('.side-navbar').classList.remove('active');
+        });
 
+        // Close offer bar
+        document.getElementById('offer-close').addEventListener('click', function() {
+            document.getElementById('offer-bar-hide').style.display = 'none';
+        });
 
+        // Back to top button
+        window.addEventListener('scroll', function() {
+            var backToTop = document.getElementById('back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+                backToTop.classList.remove('invisible');
+                backToTop.classList.remove('opacity-0');
+            } else {
+                backToTop.classList.remove('visible');
+                backToTop.classList.add('invisible');
+                backToTop.classList.add('opacity-0');
+            }
+        });
 
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
 
-
-
-
-    <script src="script.js"></script>
+        // Slider functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slider-item');
+        const indicators = document.querySelectorAll('.slider-indicator');
+        
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            indicators[index].classList.add('active');
+            currentSlide = index;
+        }
+        
+        document.getElementById('slider-right-activate').addEventListener('click', function() {
+            let nextSlide = (currentSlide + 1) % slides.length;
+            showSlide(nextSlide);
+        });
+        
+        document.getElementById('slider-left-activate').addEventListener('click', function() {
+            let prevSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(prevSlide);
+        });
+        
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => showSlide(index));
+        });
+        
+        // Initialize first slide
+        showSlide(0);
+        
+        // Auto slide change every 5 seconds
+        setInterval(() => {
+            let nextSlide = (currentSlide + 1) % slides.length;
+            showSlide(nextSlide);
+        }, 5000);
+    </script>
 </body>
 
 </html>

@@ -4,179 +4,626 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collections</title>
-    <!--Link CSS File-->
+    <title>Collections | Nostra - Premium Fashion</title>
+    <meta name="description" content="Browse our premium fashion collections at Nostra. Filter by occasion, color and more to find your perfect style.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-    <!--Link Google Fonts-->
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <!--Link Font Awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- tailwind css cdn -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body>
-    <!-- offer -->
-    <div class="offer-bar">
-        <p>Sign up and <b>GET 20% OFF </b>for your first order
-            <i id="offer-close" style="margin-left: 10%; cursor: pointer;" class="fa-solid fa-xmark"></i>
-        </p>
+<body class="font-dm-sans">
+    <!-- Offer Bar -->
+    <div id="offer-bar-hide" class="bg-black text-white">
+        <div class="offer-bar container mx-auto py-2 px-4 text-center text-sm md:text-base">
+            <p>Sign up and <strong class="font-bold">GET 20% OFF</strong> for your first order. 
+                <span class="ml-4 md:ml-8">Use code: <strong>NEW20</strong></span>
+                <i id="offer-close" class="fa-solid fa-xmark ml-4 cursor-pointer hover:text-gray-300 transition-colors"></i>
+            </p>
+        </div>
     </div>
-    <!-- navbar -->
-    <nav class="navbar">
-        <h1>Nostra</h1>
+    
+    <!-- Navbar -->
+    <nav class="navbar sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold font-playfair-display">Nostra</a>
 
-        <svg id="menuicon" class="md:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-            stroke-width="1.5" stroke="currentColor" width="26" height="26">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-        <div class="navbar-items hidden md:flex">
-            <a href="index.html">Home</a>
-            <a href="index.html">New arrival</a>
-            <a href="index.html">Most wanted</a>
-            <a href="collection.html">Collection</a>
-            <a href="contact.html">Contact us</a>
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center space-x-4">
+                <a href="#" class="text-lg"><i class="fas fa-search"></i></a>
+                <a href="#" class="text-lg"><i class="fas fa-shopping-bag"></i></a>
+                <button id="menuicon" class="text-gray-700 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="26" height="26">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Desktop menu -->
+            <div class="navbar-items hidden md:flex items-center space-x-8">
+                <a href="index.html" class="hover:text-gray-600 transition-colors">Home</a>
+                <a href="index.html#new-arrival" class="hover:text-gray-600 transition-colors">New Arrivals</a>
+                <a href="index.html#most-wanted" class="hover:text-gray-600 transition-colors">Most Wanted</a>
+                <a href="collection.html" class="hover:text-gray-600 transition-colors">Collections</a>
+                <a href="contact.html" class="hover:text-gray-600 transition-colors">Contact</a>
+                <a href="#" class="text-lg hover:text-gray-600"><i class="fas fa-search"></i></a>
+                <a href="#" class="text-lg hover:text-gray-600"><i class="fas fa-user"></i></a>
+                <a href="#" class="text-lg hover:text-gray-600 relative">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                </a>
+            </div>
         </div>
     </nav>
 
-
-    <!--Side Navbar-->
-
-    <div class="side-navbar">
-        <p style="text-align: right;">
-            <i id="side-navbar-close" class="fa-solid fa-xmark"></i>
-        </p>
-        <div class="side-navbar-links">
-
-            <p class="side-navbar-link"><a href="./index.html">Home</a></p>
-            <p class="side-navbar-link"><a href="./index.html">New Arrival</a></p>
-            <p class="side-navbar-link"><a href="./index.html">Most Wanted</a></p>
-            <p class="side-navbar-link"><a href="./collection.html">Collections</a></p>
-            <p class="side-navbar-link"><a href="./con">Contact Us</a></p>
+    <!-- Mobile Side Navbar -->
+    <div class="side-navbar"> 
+        <div class="flex justify-between items-center p-4">
+            <a href="index.html" class="text-2xl font-bold text-white">Nostra</a>
+            <button id="side-navbar-close" class="text-2xl text-white focus:outline-none">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
         </div>
-
+        
+        <div class="side-navbar-links p-4 space-y-4">
+            <a href="index.html" class="block py-2 text-white hover:text-gray-300">Home</a>
+            <a href="index.html#new-arrival" class="block py-2 text-white hover:text-gray-300">New Arrivals</a>
+            <a href="index.html#most-wanted" class="block py-2 text-white hover:text-gray-300">Most Wanted</a>
+            <a href="collection.html" class="block py-2 text-white hover:text-gray-300">Collections</a>
+            <a href="contact.html" class="block py-2 text-white hover:text-gray-300">Contact</a>
+        </div>
     </div>
 
-    <!-- filter-section -->
-    <div class="container">
-
-        <div class="divide-section">
-            <div class="filter-section">
-
-                <h3 class="filter-section-occasion">Occasion</h3>
-                <div>
-                    <input type="checkbox" name="tags" value="summer"> Summer <br>
-                    <input type="checkbox" name="tags" value="party"> Party <br>
-                    <input type="checkbox" name="tags" value="beach"> Beach
-
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold mb-8 font-playfair-display" data-aos="fade-up">Our Collections</h1>
+        
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Filter Section -->
+            <aside class="lg:w-1/4" data-aos="fade-right">
+                <div class="bg-white p-6 rounded-lg shadow-sm sticky top-32">
+                    <!-- Search -->
+                    <div class="mb-8 relative">
+                        <input type="text" placeholder="Search products..." 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent">
+                        <i class="fas fa-search absolute right-4 top-3 text-gray-400"></i>
+                    </div>
+                    
+                    <!-- Filter by Occasion -->
+                    <div class="mb-8">
+                        <h3 class="text-lg font-bold mb-4 border-b pb-2">Occasion</h3>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" name="occasion" value="summer" class="mr-2 h-4 w-4">
+                                <span>Summer</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="occasion" value="party" class="mr-2 h-4 w-4">
+                                <span>Party</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="occasion" value="beach" class="mr-2 h-4 w-4">
+                                <span>Beach</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Filter by Color -->
+                    <div class="mb-8">
+                        <h3 class="text-lg font-bold mb-4 border-b pb-2">Colors</h3>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" name="color" value="red" class="mr-2 h-4 w-4">
+                                <span>Red</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="color" value="blue" class="mr-2 h-4 w-4">
+                                <span>Blue</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="color" value="white" class="mr-2 h-4 w-4">
+                                <span>White</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="color" value="green" class="mr-2 h-4 w-4">
+                                <span>Green</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="color" value="floral" class="mr-2 h-4 w-4">
+                                <span>Floral</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Filter by Arrival -->
+                    <div class="mb-8">
+                        <h3 class="text-lg font-bold mb-4 border-b pb-2">Arrivals</h3>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" name="arrival" value="new" class="mr-2 h-4 w-4">
+                                <span>New Arrivals</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="arrival" value="old" class="mr-2 h-4 w-4">
+                                <span>Previous Collection</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button id="reset-filters" class="text-black border-b border-black pb-1 font-medium hover:text-gray-600 transition-colors">
+                        Reset All Filters
+                    </button>
                 </div>
-
-                <h3 class="filter-section-colors"> Colors </h3>
-                <div>
-                    <input type="checkbox" name="tags" value="red"> Red <br>
-                    <input type="checkbox" name="tags" value="blue"> Blue <br>
-                    <input type="checkbox" name="tags" value="white"> White <br>
-                    <input type="checkbox" name="tags" value="green"> Green
-                </div>
-
-                <h3 class="filter-section-arrivals"> Arrivals </h3>
-                <div>
-                    <input type="checkbox" name="tags" value="new"> New <br>
-                    <input type="checkbox" name="tags" value="old"> Old
-
-                </div>
-
-
-                <hr class="vertical-line">
-            </div>
-
-            <div class="product-section">
-                <form class="navbar-search" style="border: solid black 2px; border-radius: 20px; margin-left: 5px;">
-                    <input id="search" type="search" placeholder="search" style="width: 80%; outline: 0;padding: 5px;">
-                    <i style="margin-left: 180px;" class="fa-solid fa-magnifying-glass"></i>
-                </form>
-
-                <div id="productcontainer" class="product">
-                    <div class="product-image" data-occasion="summer" data-arrival="new" data-color="blue">
-                        <img src="images/product/n1.jpg" alt="">
-                        <h1>Blue Summer shirt</h1>
-                        <p>$220</p>
+            </aside>
+            
+            <!-- Product Section -->
+            <div class="lg:w-3/4" data-aos="fade-left">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Product 1 -->
+                    <div class="product-card" data-occasion="summer" data-arrival="new" data-color="blue">
+                        <div class="product-image relative overflow-hidden">
+                            <img src="images/product/n1.jpg" alt="Blue Summer Shirt" class="w-full h-80 object-cover">
+                            <div class="product-overlay absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-opacity-20 transition-all">
+                                <button class="bg-white text-black px-6 py-2 rounded-full font-medium transform translate-y-4 hover:translate-y-0 transition-transform">
+                                    Quick View
+                                </button>
+                            </div>
+                            <span class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded-full">NEW</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-medium mb-1">Blue Summer Shirt</h3>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">₹1,599</span>
+                                <div class="flex space-x-1 text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-image" data-occasion="party" data-arrival="new" data-color="floral">
-                        <img src="images/product/n7.jpg" alt="">
-                        <h1>Party Yellow shirt</h1>
-                        <p>$399</p>
+                    
+                    <!-- Product 2 -->
+                    <div class="product-card" data-occasion="party" data-arrival="new" data-color="floral">
+                        <div class="product-image relative overflow-hidden">
+                            <img src="images/product/n7.jpg" alt="Party Yellow Shirt" class="w-full h-80 object-cover">
+                            <div class="product-overlay absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-opacity-20 transition-all">
+                                <button class="bg-white text-black px-6 py-2 rounded-full font-medium transform translate-y-4 hover:translate-y-0 transition-transform">
+                                    Quick View
+                                </button>
+                            </div>
+                            <span class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded-full">NEW</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-medium mb-1">Party Yellow Shirt</h3>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">₹2,999</span>
+                                <div class="flex space-x-1 text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-image" data-occasion="summer" data-arrival="old" data-color="green">
-                        <img src="images/product/n6.jpg" alt="">
-                        <h1>summer green trousers</h1>
-                        <p>$199</p>
+                    
+                    <!-- Product 3 -->
+                    <div class="product-card" data-occasion="summer" data-arrival="old" data-color="green">
+                        <div class="product-image relative overflow-hidden">
+                            <img src="images/product/n6.jpg" alt="Summer Green Trousers" class="w-full h-80 object-cover">
+                            <div class="product-overlay absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-opacity-20 transition-all">
+                                <button class="bg-white text-black px-6 py-2 rounded-full font-medium transform translate-y-4 hover:translate-y-0 transition-transform">
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-medium mb-1">Summer Green Trousers</h3>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">₹1,499</span>
+                                <div class="flex space-x-1 text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product__image" data-occasion="summer" data-color="floral" data-arrival="old">
-                        <img src="images/product/n8.jpg" alt="">
-                        <h1>Floral Summer Shirt</h1>
-                        <p>₹399</p>
+                    
+                    <!-- Product 4 -->
+                    <div class="product-card" data-occasion="summer" data-arrival="old" data-color="floral">
+                        <div class="product-image relative overflow-hidden">
+                            <img src="images/product/n8.jpg" alt="Floral Summer Shirt" class="w-full h-80 object-cover">
+                            <div class="product-overlay absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-opacity-20 transition-all">
+                                <button class="bg-white text-black px-6 py-2 rounded-full font-medium transform translate-y-4 hover:translate-y-0 transition-transform">
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-medium mb-1">Floral Summer Shirt</h3>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">₹1,299</span>
+                                <div class="flex space-x-1 text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product__image" data-occasion="beach" data-color="white" data-arrival="new">
-                        <img src="./images/product/f1.jpg" alt="">
-                        <h1>Beach Shirt</h1>
-                        <p>₹579</p>
+                    
+                    <!-- Product 5 -->
+                    <div class="product-card" data-occasion="beach" data-arrival="new" data-color="white">
+                        <div class="product-image relative overflow-hidden">
+                            <img src="images/product/f1.jpg" alt="Beach Shirt" class="w-full h-80 object-cover">
+                            <div class="product-overlay absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-opacity-20 transition-all">
+                                <button class="bg-white text-black px-6 py-2 rounded-full font-medium transform translate-y-4 hover:translate-y-0 transition-transform">
+                                    Quick View
+                                </button>
+                            </div>
+                            <span class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded-full">NEW</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-medium mb-1">Beach Shirt</h3>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">₹1,799</span>
+                                <div class="flex space-x-1 text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product__image" data-occasion="party" data-color="red" data-arrival="new">
-                        <img src="./images/product/f2.jpg" alt="">
-                        <h1>Shirt Party Red</h1>
-                        <p>₹579</p>
+                    
+                    <!-- Product 6 -->
+                    <div class="product-card" data-occasion="party" data-arrival="new" data-color="red">
+                        <div class="product-image relative overflow-hidden">
+                            <img src="images/product/f2.jpg" alt="Party Red Shirt" class="w-full h-80 object-cover">
+                            <div class="product-overlay absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-opacity-20 transition-all">
+                                <button class="bg-white text-black px-6 py-2 rounded-full font-medium transform translate-y-4 hover:translate-y-0 transition-transform">
+                                    Quick View
+                                </button>
+                            </div>
+                            <span class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded-full">NEW</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-medium mb-1">Party Red Shirt</h3>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">₹2,299</span>
+                                <div class="flex space-x-1 text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product__image" data-occasion="party" data-color="floral" data-arrival="old">
-                        <img src="./images/product/f3.jpg" alt="">
-                        <h1>Party Floral Shirt</h1>
-                        <p>₹399</p>
+                    
+                    <!-- Product 7 -->
+                    <div class="product-card" data-occasion="party" data-arrival="old" data-color="floral">
+                        <div class="product-image relative overflow-hidden">
+                            <img src="images/product/f3.jpg" alt="Party Floral Shirt" class="w-full h-80 object-cover">
+                            <div class="product-overlay absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-opacity-20 transition-all">
+                                <button class="bg-white text-black px-6 py-2 rounded-full font-medium transform translate-y-4 hover:translate-y-0 transition-transform">
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-medium mb-1">Party Floral Shirt</h3>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">₹1,299</span>
+                                <div class="flex space-x-1 text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product__image" data-occasion="party" data-color="red" data-arrival="old">
-                        <img src="./images/product/f4.jpg" alt="">
-                        <h1>Shirt Party Red</h1>
-                        <p>₹579</p>
+                    
+                    <!-- Product 8 -->
+                    <div class="product-card" data-occasion="party" data-arrival="old" data-color="red">
+                        <div class="product-image relative overflow-hidden">
+                            <img src="images/product/f4.jpg" alt="Party Red Shirt" class="w-full h-80 object-cover">
+                            <div class="product-overlay absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-opacity-20 transition-all">
+                                <button class="bg-white text-black px-6 py-2 rounded-full font-medium transform translate-y-4 hover:translate-y-0 transition-transform">
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-medium mb-1">Party Red Shirt</h3>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">₹1,799</span>
+                                <div class="flex space-x-1 text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product__image" data-occasion="summer" data-color="floral" data-arrival="new">
-                        <img src="./images/product/f5.jpg" alt="">
-                        <h1>Floral Summer Shirt</h1>
-                        <p>₹220</p>
+                    
+                    <!-- Product 9 -->
+                    <div class="product-card" data-occasion="summer" data-arrival="new" data-color="floral">
+                        <div class="product-image relative overflow-hidden">
+                            <img src="images/product/f5.jpg" alt="Floral Summer Shirt" class="w-full h-80 object-cover">
+                            <div class="product-overlay absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-opacity-20 transition-all">
+                                <button class="bg-white text-black px-6 py-2 rounded-full font-medium transform translate-y-4 hover:translate-y-0 transition-transform">
+                                    Quick View
+                                </button>
+                            </div>
+                            <span class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded-full">NEW</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-medium mb-1">Floral Summer Shirt</h3>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">₹1,599</span>
+                                <div class="flex space-x-1 text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
+    </main>
 
-        <!-- news -->
-        <section class="text-center">
-            <h1 class="text-5xl font-bold mt-5 ">Join our news letter</h1>
-            <p class="text-3xl">Sign up for our email newspaper to get exclusive discounts,updates,and more</p>
-            <input type="text" class="border border-black p-2 m-3 " style="width:85%;" id="">
-            <br>
-            <button class="bg-black text-white p-2 m-1 ">Subscribe<i class="fa-solid fa-arrow-right"></i></button>
-        </section>
+    <!-- Newsletter -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 font-playfair-display" data-aos="fade-up">Join Our Newsletter</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8" data-aos="fade-up">Sign up for our email newsletter to get exclusive discounts, updates, and more.</p>
+            
+            <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-3" data-aos="fade-up">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent" required>
+                <button type="submit" class="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors flex items-center justify-center">
+                    Subscribe <i class="fa-solid fa-arrow-right ml-2"></i>
+                </button>
+            </form>
+            
+            <p class="text-sm text-gray-500 mt-4" data-aos="fade-up">We respect your privacy. Unsubscribe at any time.</p>
+        </div>
+    </section>
 
-        <!-- footer -->
-        <section class="bg-slate-950 p-10 flex flex-col gap-5 footer ">
-            <h1 class="text-5xl font-bold">Nostra</h1>
-            <p>hurry up to avail our exclusive Collections of dress and make your wardrobe plesant as pleased</p>
-            <div style="display: flex; gap: 60px; font-size: xx-large;">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-x-twitter"></i>
-                <i class="fa-brands fa-facebook"></i>
+    <!-- Footer -->
+    <footer class="bg-black text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Column 1 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 font-playfair-display">Nostra</h3>
+                    <p class="text-gray-400 mb-4">Premium fashion for the modern Indian. Quality, style, and comfort in every piece.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Column 2 -->
+                <div>
+                    <h4 class="font-bold mb-4">Shop</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">New Arrivals</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Best Sellers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Men's Collection</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Women's Collection</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Accessories</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div>
+                    <h4 class="font-bold mb-4">Help</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Customer Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Track Order</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Returns & Exchanges</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Shipping Information</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 -->
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>No:123, Main Road, Puducherry - 605110</span> 
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3"></i>
+                            <span>+91 12345 67890</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <span>hello@nostra.com</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <p>@2023 Nostra.com</p>
-        </section>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 Nostra. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-black text-white w-12 h-12 rounded-full flex items-center justify-center opacity-0 invisible transition-all">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-<script src="collection.js"></script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animation library
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
 
+        // Mobile menu toggle
+        document.getElementById('menuicon').addEventListener('click', function() {
+            document.querySelector('.side-navbar').classList.add('active');
+        });
 
+        document.getElementById('side-navbar-close').addEventListener('click', function() {
+            document.querySelector('.side-navbar').classList.remove('active');
+        });
 
+        // Close offer bar
+        document.getElementById('offer-close').addEventListener('click', function() {
+            document.getElementById('offer-bar-hide').style.display = 'none';
+        });
+
+        // Back to top button
+        window.addEventListener('scroll', function() {
+            var backToTop = document.getElementById('back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+                backToTop.classList.remove('invisible');
+                backToTop.classList.remove('opacity-0');
+            } else {
+                backToTop.classList.remove('visible');
+                backToTop.classList.add('invisible');
+                backToTop.classList.add('opacity-0');
+            }
+        });
+
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+
+        // Product filtering functionality
+        const filters = {
+            occasion: [],
+            color: [],
+            arrival: []
+        };
+
+        // Get all filter checkboxes
+        const filterCheckboxes = document.querySelectorAll('input[type="checkbox"]');
         
+        // Get all product cards
+        const productCards = document.querySelectorAll('.product-card');
+        
+        // Add event listeners to checkboxes
+        filterCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const filterType = this.name;
+                const filterValue = this.value;
+                
+                if (this.checked) {
+                    if (!filters[filterType].includes(filterValue)) {
+                        filters[filterType].push(filterValue);
+                    }
+                } else {
+                    filters[filterType] = filters[filterType].filter(item => item !== filterValue);
+                }
+                
+                filterProducts();
+            });
+        });
+        
+        // Reset filters button
+        document.getElementById('reset-filters').addEventListener('click', function() {
+            filterCheckboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            
+            filters.occasion = [];
+            filters.color = [];
+            filters.arrival = [];
+            
+            filterProducts();
+        });
+        
+        // Filter products based on selected filters
+        function filterProducts() {
+            productCards.forEach(card => {
+                const occasionMatch = filters.occasion.length === 0 || 
+                    filters.occasion.some(occ => card.dataset.occasion.includes(occ));
+                
+                const colorMatch = filters.color.length === 0 || 
+                    filters.color.some(col => card.dataset.color.includes(col));
+                
+                const arrivalMatch = filters.arrival.length === 0 || 
+                    filters.arrival.some(arr => card.dataset.arrival.includes(arr));
+                
+                if (occasionMatch && colorMatch && arrivalMatch) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        
+        // Search functionality
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            productCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
